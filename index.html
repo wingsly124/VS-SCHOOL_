@@ -137,16 +137,45 @@ body.light .role-pick button{background:#fff}
 .stat .n{font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1.1}
 .stat .l{font-size:11.5px;color:var(--muted);margin-top:5px;font-weight:600}
 .stat.blue .n{color:#7dd3fc}.stat.yellow .n{color:#fbbf24}.stat.green .n{color:#34d399}.stat.red .n{color:#f87171}
-.hero{background:linear-gradient(135deg,rgba(14,165,233,.25),rgba(16,185,129,.1));border:1px solid rgba(14,165,233,.3);border-radius:20px;padding:24px;margin-bottom:18px;position:relative;overflow:hidden}
-.hero h2{margin:0 0 6px;font-size:20px;font-weight:800;position:relative}
-.hero p{margin:0 0 14px;font-size:13.5px;color:var(--muted);position:relative}
-.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;position:relative}
-@media(max-width:560px){.quick{grid-template-columns:repeat(2,1fr)}}
-.quick button{padding:14px 10px;border-radius:12px;font-size:12.5px;font-weight:700;background:rgba(11,18,32,.6);border:1px solid var(--line);color:var(--text);display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;line-height:1.35}
-body.light .quick button{background:#fff}
-.quick button:hover{border-color:var(--primary);background:rgba(14,165,233,.15)}
-.quick button .qc-ic{font-size:22px}
-.quick button.q-sos{background:linear-gradient(135deg,rgba(239,68,68,.3),rgba(245,158,11,.15));border-color:rgba(239,68,68,.55);color:#fca5a5}
+
+/* NEW HOME LAYOUT */
+.home-hero{background:linear-gradient(135deg,rgba(14,165,233,.28),rgba(16,185,129,.12));border:1px solid rgba(14,165,233,.35);border-radius:24px;padding:26px 24px;margin-bottom:20px;position:relative;overflow:hidden}
+.home-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.35),transparent 70%);pointer-events:none}
+.home-hero .hh-greet{font-size:22px;font-weight:800;letter-spacing:-.4px;position:relative;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.home-hero .hh-greet .wave{display:inline-block;animation:waveHand 2s ease-in-out infinite;transform-origin:70% 70%}
+@keyframes waveHand{0%,100%{transform:rotate(0)}25%{transform:rotate(14deg)}75%{transform:rotate(-6deg)}}
+.home-hero .hh-sub{font-size:13.5px;color:var(--muted);margin-top:6px;position:relative}
+.home-hero .hh-date{font-size:11.5px;color:var(--dim);letter-spacing:1px;margin-top:10px;position:relative;text-transform:uppercase;font-weight:700}
+
+.home-section-title{font-size:13px;font-weight:800;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin:22px 0 12px;display:flex;align-items:center;gap:8px}
+.home-section-title::before{content:'';width:3px;height:14px;background:linear-gradient(180deg,#0ea5e9,#10b981);border-radius:2px}
+
+.home-actions{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.home-action{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px 16px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:.2s;position:relative;overflow:hidden}
+.home-action:hover{transform:translateY(-3px);border-color:var(--primary);box-shadow:0 12px 32px rgba(14,165,233,.22)}
+.home-action .ha-icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:24px;flex-shrink:0;background:linear-gradient(135deg,rgba(14,165,233,.25),rgba(16,185,129,.15));border:1px solid rgba(14,165,233,.3)}
+.home-action .ha-text{flex:1;min-width:0}
+.home-action .ha-title{font-size:14px;font-weight:800;line-height:1.3}
+.home-action .ha-desc{font-size:11.5px;color:var(--muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.home-action.sos{background:linear-gradient(135deg,rgba(239,68,68,.28),rgba(245,158,11,.12));border-color:rgba(239,68,68,.55)}
+.home-action.sos .ha-icon{background:linear-gradient(135deg,#ef4444,#b91c1c);border-color:transparent}
+.home-action.sos .ha-title{color:#fca5a5}
+.home-action.sos:hover{border-color:#ef4444;box-shadow:0 12px 32px rgba(239,68,68,.35)}
+
+.home-status{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:8px}
+.home-status .hs-item{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;align-items:center;gap:12px}
+.home-status .hs-item .hs-icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:20px;flex-shrink:0;background:linear-gradient(135deg,rgba(14,165,233,.2),rgba(16,185,129,.1));border:1px solid var(--line)}
+.home-status .hs-item .hs-body{flex:1;min-width:0}
+.home-status .hs-item .hs-num{font-size:22px;font-weight:800;line-height:1.1}
+.home-status .hs-item .hs-lbl{font-size:11px;color:var(--muted);font-weight:600;margin-top:2px}
+.home-status .hs-item.blue .hs-num{color:#7dd3fc}
+.home-status .hs-item.yellow .hs-num{color:#fbbf24}
+.home-status .hs-item.green .hs-num{color:#34d399}
+.home-status .hs-item.red .hs-num{color:#f87171}
+
+.home-empty{background:var(--panel);border:1px dashed var(--line);border-radius:18px;padding:32px 20px;text-align:center;color:var(--dim);font-size:13.5px}
+.home-empty .he-ic{font-size:44px;display:block;margin-bottom:10px;opacity:.6}
+
 .badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:700}
 .badge.pending{background:rgba(245,158,11,.2);color:#fbbf24}
 .badge.review{background:rgba(14,165,233,.2);color:#7dd3fc}
@@ -165,6 +194,7 @@ body.light .quick button{background:#fff}
 .badge.unhealthy{background:rgba(239,68,68,.25);color:#f87171}
 .badge.emergency{background:rgba(239,68,68,.4);color:#fca5a5;animation:pulseBadge 1.5s ease-in-out infinite}
 @keyframes pulseBadge{0%,100%{opacity:1}50%{opacity:.6}}
+
 .empty{text-align:center;padding:44px 20px;color:var(--dim);font-size:13.5px}
 .empty .ic{font-size:42px;display:block;margin-bottom:12px;opacity:.5}
 .list-item{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px;margin-bottom:11px;cursor:pointer;transition:.16s}
@@ -201,11 +231,14 @@ body.light .chat-input input{background:#fff}
 .typing{align-self:flex-start;padding:12px 18px;color:var(--muted);font-size:13px;letter-spacing:3px}
 .suggest{display:flex;gap:7px;flex-wrap:wrap;padding:0 13px 13px}
 .suggest button{padding:7px 13px;border-radius:99px;font-size:12px;background:rgba(14,165,233,.1);border:1px solid var(--line);color:var(--muted)}
-.modal{position:fixed;inset:0;background:rgba(11,18,32,.85);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:200;padding:18px}
+
+/* Modal — z-index raised above SOS overlay */
+.modal{position:fixed;inset:0;background:rgba(11,18,32,.85);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:600;padding:18px}
 .modal.on{display:flex}
 .modal-box{background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:24px;max-width:640px;width:100%;max-height:88vh;overflow-y:auto;position:relative;box-shadow:0 30px 80px rgba(14,165,233,.25)}
 .modal-box h2{margin:0 0 6px;font-size:20px;font-weight:800}
 .modal-close{position:absolute;top:14px;right:14px}
+
 .test-prog{height:6px;background:rgba(14,165,233,.15);border-radius:99px;overflow:hidden;margin-bottom:8px}
 .test-prog i{display:block;height:100%;background:linear-gradient(90deg,#0ea5e9,#10b981,#06b6d4);transition:width .35s;border-radius:99px}
 .opt{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;border-radius:13px;background:rgba(11,18,32,.5);border:1px solid var(--line);margin-bottom:12px;cursor:pointer;font-size:15px;line-height:1.5;min-height:56px;transition:.16s;width:100%}
@@ -238,21 +271,10 @@ body.light .participant-row input{background:#fff}
 .media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px;margin-top:10px}
 .media-thumb{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:1;background:rgba(11,18,32,.6);border:1px solid var(--line)}
 .media-thumb img,.media-thumb video{width:100%;height:100%;object-fit:cover}
-.msg-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px;transition:.15s}
-.msg-card:hover{border-color:rgba(14,165,233,.5)}
-.msg-card.unread{border-left:3px solid var(--primary2);background:rgba(16,185,129,.06)}
-.msg-card.sos{border-left:4px solid #ef4444;background:linear-gradient(135deg,rgba(239,68,68,.14),rgba(30,41,59,.72))}
-.msg-card .title{font-size:15px;font-weight:800;margin-bottom:6px}
-.msg-card .meta{font-size:11.5px;color:var(--dim);display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px;align-items:center}
-.msg-card .preview{font-size:13px;color:var(--muted);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.msg-card .actions{margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-.like-btn{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:99px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.35);color:#6ee7b7;font-size:12.5px;font-weight:700;cursor:pointer}
-.like-btn.on{background:rgba(16,185,129,.3);color:#fff}
-.view-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:99px;background:linear-gradient(135deg,#0ea5e9,#10b981);color:#fff;font-size:12.5px;font-weight:700;cursor:pointer;border:none}
 .stress-menu{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
 @media(max-width:560px){.stress-menu{grid-template-columns:1fr}}
-.stress-card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:32px 24px;text-align:center;cursor:pointer;transition:.2s;position:relative;overflow:hidden}
-.stress-card:hover{transform:translateY(-3px);border-color:var(--primary);box-shadow:0 20px 50px rgba(14,165,233,.25)}
+.stress-card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:32px 24px;text-align:center;cursor:pointer;transition:.2s}
+.stress-card:hover{transform:translateY(-3px);border-color:var(--primary)}
 .stress-card .ic{font-size:56px;display:block;margin-bottom:14px}
 .stress-card h3{margin:0 0 8px;font-size:18px;font-weight:800}
 .stress-card p{margin:0;font-size:13px;color:var(--muted);line-height:1.6}
@@ -262,11 +284,11 @@ body.light .participant-row input{background:#fff}
 .sound-btn:hover{border-color:var(--primary);transform:translateY(-3px)}
 .sound-btn.active{background:linear-gradient(135deg,rgba(14,165,233,.35),rgba(16,185,129,.25));border-color:var(--primary)}
 .sound-btn .ic{font-size:36px;display:block;margin-bottom:8px}
-.bubble-stage{position:relative;width:100%;height:calc(100vh - 280px);min-height:420px;background:linear-gradient(160deg,rgba(14,165,233,.15),rgba(16,185,129,.08),rgba(6,182,212,.08));border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:16px}
+.bubble-stage{position:relative;width:100%;height:calc(100vh - 280px);min-height:420px;background:linear-gradient(160deg,rgba(14,165,233,.15),rgba(16,185,129,.08));border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:16px}
 .bubble{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.85),rgba(14,165,233,.45) 60%,rgba(16,185,129,.25));border:1px solid rgba(255,255,255,.4);cursor:pointer;box-shadow:0 8px 24px rgba(14,165,233,.35);animation:floatUp linear}
 @keyframes floatUp{from{transform:translateY(100%) scale(.6);opacity:0}10%{opacity:1;transform:translateY(80%) scale(1)}to{transform:translateY(-120%) scale(1)}}
 .bubble-pop{position:absolute;font-size:15px;font-weight:700;color:#fff;padding:12px 18px;border-radius:16px;background:linear-gradient(135deg,rgba(14,165,233,.98),rgba(16,185,129,.9));box-shadow:0 10px 30px rgba(14,165,233,.55);pointer-events:none;animation:popText 3.5s forwards;max-width:280px;line-height:1.5;z-index:10;text-align:center}
-@keyframes popText{0%{opacity:0;transform:translateY(20px) scale(.6)}15%{opacity:1;transform:translateY(-10px) scale(1.08)}20%{transform:translateY(0) scale(1)}80%{opacity:1}100%{opacity:0;transform:translateY(-30px)}}
+@keyframes popText{0%{opacity:0;transform:translateY(20px) scale(.6)}15%{opacity:1;transform:translateY(-10px) scale(.6)}20%{transform:translateY(0) scale(1)}80%{opacity:1}100%{opacity:0;transform:translateY(-30px)}}
 .stress-back{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:11px;background:var(--panel);border:1px solid var(--line);font-size:13.5px;font-weight:700;margin-bottom:12px;cursor:pointer}
 .breath-stage{display:grid;place-items:center;padding:32px 20px;min-height:520px;background:linear-gradient(160deg,rgba(14,165,233,.12),rgba(16,185,129,.06));border:1px solid var(--line);border-radius:20px;margin-top:16px;position:relative;overflow:hidden}
 .breath-circle-wrap{position:relative;width:260px;height:260px;display:grid;place-items:center}
@@ -289,6 +311,8 @@ body.light .participant-row input{background:#fff}
 .medit-pick{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:16px}
 .medit-pick button{padding:14px 26px;border-radius:14px;background:var(--panel);border:1px solid var(--line);font-size:14px;font-weight:700}
 .medit-pick button.on{background:linear-gradient(135deg,rgba(14,165,233,.4),rgba(16,185,129,.3));border-color:var(--primary);color:#fff}
+.medit-pick button.custom{border-style:dashed;border-color:rgba(139,92,246,.5);color:#c4b5fd}
+.medit-pick button.custom:hover{background:rgba(139,92,246,.1)}
 .profile-head{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
 .profile-avatar{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,#0ea5e9,#10b981);display:grid;place-items:center;color:#fff;font-size:38px;font-weight:800;overflow:hidden;position:relative;flex-shrink:0;border:3px solid var(--line)}
 .profile-avatar img{width:100%;height:100%;object-fit:cover}
@@ -361,7 +385,6 @@ body.light .filter-bar select,body.light .filter-bar input{background:#fff}
 .hi-meta{font-size:11.5px;color:var(--dim);display:flex;gap:12px;flex-wrap:wrap}
 .hi-body{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.65}
 
-/* ROUND SOS BUTTON */
 .sos-page{max-width:600px;margin:0 auto;text-align:center}
 .sos-round-btn{width:260px;height:260px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ef4444,#b91c1c 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;box-shadow:0 20px 60px rgba(239,68,68,.6),inset 0 0 60px rgba(255,255,255,.2),0 0 0 12px rgba(239,68,68,.15),0 0 0 24px rgba(239,68,68,.08);border:6px solid rgba(255,255,255,.35);cursor:pointer;transition:.2s;position:relative;overflow:hidden;animation:sosHeartbeat 1.6s ease-in-out infinite;margin:24px auto 8px}
 @keyframes sosHeartbeat{0%,100%{transform:scale(1)}10%{transform:scale(1.03)}20%{transform:scale(1)}30%{transform:scale(1.05)}40%{transform:scale(1)}}
@@ -381,11 +404,9 @@ body.light .filter-bar select,body.light .filter-bar input{background:#fff}
 .sos-info-card.ok{border-color:rgba(16,185,129,.4);background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(30,41,59,.72))}
 .sos-info-card.danger{border-color:rgba(239,68,68,.5);background:linear-gradient(135deg,rgba(239,68,68,.1),rgba(30,41,59,.72))}
 .sos-info-card ul{margin:0;padding-left:20px;font-size:13.5px;line-height:1.9;color:var(--muted)}
-.sos-info-card ul li{margin-bottom:4px}
 .sos-cooldown{background:rgba(239,68,68,.12);border:1px dashed rgba(239,68,68,.5);border-radius:12px;padding:12px;text-align:center;margin-top:14px;font-size:13.5px;color:#fca5a5;font-weight:700}
 .sos-cooldown .cd{font-size:22px;font-weight:800;font-family:ui-monospace,Menlo,monospace;color:#fca5a5;margin-top:4px}
 
-/* SOS ALERT FULLSCREEN */
 .sos-alert-overlay{position:fixed;inset:0;background:rgba(15,0,0,.96);z-index:500;display:none;align-items:center;justify-content:center;padding:20px;animation:sosFlash 0.5s ease-in-out infinite alternate}
 .sos-alert-overlay.on{display:flex}
 @keyframes sosFlash{from{background:rgba(60,0,0,.96)}to{background:rgba(120,0,0,.96)}}
@@ -403,7 +424,6 @@ body.light .filter-bar select,body.light .filter-bar input{background:#fff}
 .sos-alert-box .actions .secondary{background:rgba(148,163,184,.15);border:1px solid rgba(148,163,184,.4);color:#94a3b8}
 .sos-alert-box .rules{margin-top:20px;padding:14px;background:rgba(239,68,68,.12);border-radius:12px;font-size:12.5px;color:#fca5a5;line-height:1.7;text-align:left}
 
-/* Community */
 .community-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px;cursor:pointer;transition:.15s}
 .community-card:hover{border-color:rgba(14,165,233,.5);transform:translateY(-2px)}
 .community-card.unread{border-left:4px solid var(--primary2);background:linear-gradient(135deg,rgba(16,185,129,.06),rgba(30,41,59,.72))}
@@ -413,6 +433,20 @@ body.light .filter-bar select,body.light .filter-bar input{background:#fff}
 .community-card .cc-meta{font-size:11.5px;color:var(--dim);display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
 .community-card .cc-body{font-size:13.5px;color:var(--muted);line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .community-card .cc-footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.like-btn{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:99px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.35);color:#6ee7b7;font-size:12.5px;font-weight:700;cursor:pointer}
+.like-btn.on{background:rgba(16,185,129,.3);color:#fff}
+
+.mood-line{position:relative;height:180px;margin-top:8px}
+.mood-line svg{width:100%;height:100%;overflow:visible}
+.mood-today-class{display:flex;flex-direction:column;gap:10px}
+.mood-class-row{background:rgba(11,18,32,.4);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.mood-class-row .cls{font-size:13px;font-weight:800;min-width:90px}
+.mood-class-row .emojis{display:flex;gap:4px;flex-wrap:wrap;flex:1;font-size:20px}
+.mood-class-row .avg{font-size:12.5px;font-weight:800;color:var(--primary2)}
+.mood-warning{background:linear-gradient(135deg,rgba(239,68,68,.15),rgba(245,158,11,.08));border:1px solid rgba(239,68,68,.4);border-radius:14px;padding:14px;margin-top:10px}
+.mood-warning .mw-title{font-size:13px;font-weight:800;color:#fca5a5;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mood-warning .mw-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;font-size:13px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.mood-warning .mw-row:last-child{border-bottom:none}
 </style>
 </head>
 <body>
@@ -431,7 +465,7 @@ body.light .filter-bar select,body.light .filter-bar input{background:#fff}
     <div class="splash-slogan" id="splashSlogan">Speak up. You are not alone</div>
     <div class="splash-school">SMK MERBAU</div>
     <div class="splash-progress"><i id="splashBar"></i></div>
-    <div class="splash-studio">WG STUDIO · © 2026 · v1.13.00</div>
+    <div class="splash-studio">WG STUDIO · © 2026 · v1.14.00</div>
   </div>
 </div>
 
@@ -491,9 +525,19 @@ body.light .filter-bar select,body.light .filter-bar input{background:#fff}
 <script>
 const SUPABASE_URL  = 'https://swxfmwrsjnmhsjhrqrdi.supabase.co';
 const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN3eGZtd3Jzam5taHNqaHJxcmRpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIwNTYxNjYsImV4cCI6MjEwNzYzMjE2Nn0.-V54H99Q3hCNGX2tF12Pr6uMserPzL8-2VnAsT9eWAA';
-const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+// Explicit persist session so refresh does not log out
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON, {
+  auth: {
+    persistSession: true,
+    autoRefreshToken: true,
+    detectSessionInUrl: false,
+    storageKey: 'vsschool-auth',
+    storage: window.localStorage,
+  }
+});
 const FN_CHAT='ai-chat', FN_TEST='ai-test', FN_ANALYZE='ai-analyze', FN_BUBBLE='ai-bubble';
-const VERSION = 'v1.13.00';
+const VERSION = 'v1.14.00';
+
 const FORMS = ['PERALIHAN','FORM 1','FORM 2','FORM 3','FORM 4','FORM 5','FORM 6'];
 const SECTIONS = ['A','B','C','D'];
 const GENDERS = ['male','female','other'];
@@ -549,8 +593,16 @@ en:{
   navApprovals:'Approval Center',navInbox:'Community',navSend:'Send',navMood:'Class Mood',
   navStress:'Stress Relief',navProfile:'Profile',navSettings:'Settings',navSOS:'Emergency SOS',
   hello:'Hi',heroSub:'This is your safe space.',
-  quickChat:'Talk to Mr Safe',quickReport:'Report',quickTest:'Mental check',
-  quickStress:'Stress relief',quickRes:'Help hotlines',quickMine:'My reports',quickSOS:'Emergency SOS',
+  homeQuickActions:'Quick Actions',
+  homeStatus:'Your Status',
+  homeRecentActivity:'Recent Activity',
+  quickChat:'Talk to Mr Safe',quickChatDesc:'AI assistant for school safety',
+  quickReport:'Report',quickReportDesc:'Report bullying or harassment',
+  quickTest:'Mental check',quickTestDesc:'15 questions, once every 12h',
+  quickStress:'Stress relief',quickStressDesc:'Breathe, meditate, relax',
+  quickRes:'Help hotlines',quickResDesc:'Emergency phone numbers',
+  quickSOS:'Emergency SOS',quickSOSDesc:'Tap for urgent help',
+  emptyRecent:'No reports yet. You are safe here 💙',
   statTotal:'My reports',statPending:'Pending',statReview:'In review',statResolved:'Resolved',
   recent:'Recent reports',noReports:'No reports yet',
   chatTitle:'Mr Safe · Anti-Bullying Assistant',chatSub:'Your safe guide',
@@ -624,7 +676,10 @@ en:{
   breathInhale:'Inhale',breathHold:'Hold',breathExhale:'Exhale',
   breathStart:'Start',breathStop:'Stop',breathCycle:'Cycle',
   meditTitle:'Meditation Timer',meditDesc:'Pick a duration and relax. Tap start.',
-  meditMin:'minutes',meditStart:'Start',meditStop:'Stop',
+  meditMin:'minutes',meditStart:'Start',meditStop:'Stop',meditCustom:'Custom',
+  meditCustomTitle:'Custom duration',
+  meditCustomPh:'Enter minutes (1-120)',
+  meditCustomHint:'Between 1 and 120 minutes',
   meditDone:'Session complete. Well done 💙',meditPlaying:'Playing · breathe gently',
   confirmTitle:'Confirm details',confirmSub:'You can change later in profile.',
   confirmName:'Name',confirmGender:'Gender',confirmRace:'Race',confirmOk:'Confirm',confirmEdit:'Edit',
@@ -696,8 +751,7 @@ en:{
   noClassesAssigned:'No class teacher available. Please call 999.',
   communityTitle:'Community',communitySub:'Announcements from admin',
   communityEmpty:'No announcements yet',
-  communityComposer:'Write announcement',
-  sentTo:'Sent to'
+  communityComposer:'Write announcement',sentTo:'Sent to'
 },
 zh:{
   login:'登录',register:'注册',signIn:'登录',createAccount:'创建账号',
@@ -740,8 +794,16 @@ zh:{
   navApprovals:'审核中心',navInbox:'社区',navSend:'发送',navMood:'班级情绪',
   navStress:'压力释放',navProfile:'我的主页',navSettings:'设置',navSOS:'紧急服务 SOS',
   hello:'你好',heroSub:'这里是你安全的空间。',
-  quickChat:'和 Mr Safe 聊聊',quickReport:'提交举报',quickTest:'心理检测',
-  quickStress:'压力释放',quickRes:'求助热线',quickMine:'我的举报',quickSOS:'紧急求助',
+  homeQuickActions:'快捷操作',
+  homeStatus:'你的状态',
+  homeRecentActivity:'最近动态',
+  quickChat:'和 Mr Safe 聊聊',quickChatDesc:'AI 校园安全助手',
+  quickReport:'提交举报',quickReportDesc:'举报霸凌或骚扰',
+  quickTest:'心理检测',quickTestDesc:'15 道题，每 12 小时一次',
+  quickStress:'压力释放',quickStressDesc:'呼吸、冥想、放松',
+  quickRes:'求助热线',quickResDesc:'紧急联系方式',
+  quickSOS:'紧急求助',quickSOSDesc:'点击立即发起求助',
+  emptyRecent:'暂无举报记录，你在这里是安全的 💙',
   statTotal:'我的举报',statPending:'待处理',statReview:'处理中',statResolved:'已解决',
   recent:'最近举报',noReports:'暂无记录',
   chatTitle:'Mr Safe · 反霸凌助手',chatSub:'你的安全向导',
@@ -816,7 +878,10 @@ zh:{
   breathInhale:'吸气',breathHold:'屏住',breathExhale:'呼气',
   breathStart:'开始',breathStop:'停止',breathCycle:'轮次',
   meditTitle:'冥想计时',meditDesc:'选择时长，点开始，安静放松。',
-  meditMin:'分钟',meditStart:'开始',meditStop:'停止',
+  meditMin:'分钟',meditStart:'开始',meditStop:'停止',meditCustom:'自定义',
+  meditCustomTitle:'自定义时长',
+  meditCustomPh:'输入分钟（1-120）',
+  meditCustomHint:'介于 1 到 120 分钟之间',
   meditDone:'冥想完成，做得很好 💙',meditPlaying:'播放中 · 轻轻呼吸',
   confirmTitle:'确认资料',confirmSub:'之后可在主页更改。',
   confirmName:'姓名',confirmGender:'性别',confirmRace:'种族',confirmOk:'确认',confirmEdit:'修改',
@@ -929,8 +994,16 @@ ms:{
   navApprovals:'Pusat Kelulusan',navInbox:'Komuniti',navSend:'Hantar',navMood:'Mood Kelas',
   navStress:'Redakan Stres',navProfile:'Profil',navSettings:'Tetapan',navSOS:'SOS Kecemasan',
   hello:'Hai',heroSub:'Ruang anda yang selamat.',
-  quickChat:'Bercakap',quickReport:'Lapor',quickTest:'Semakan',
-  quickStress:'Redakan',quickRes:'Hotline',quickMine:'Laporan saya',quickSOS:'SOS kecemasan',
+  homeQuickActions:'Tindakan Pantas',
+  homeStatus:'Status Anda',
+  homeRecentActivity:'Aktiviti Terkini',
+  quickChat:'Bercakap dengan Mr Safe',quickChatDesc:'Pembantu AI keselamatan sekolah',
+  quickReport:'Lapor',quickReportDesc:'Lapor buli atau gangguan',
+  quickTest:'Semakan mental',quickTestDesc:'15 soalan, setiap 12 jam',
+  quickStress:'Redakan stres',quickStressDesc:'Bernafas, meditasi, relaks',
+  quickRes:'Hotline bantuan',quickResDesc:'Nombor kecemasan',
+  quickSOS:'SOS Kecemasan',quickSOSDesc:'Ketik untuk bantuan segera',
+  emptyRecent:'Tiada laporan lagi. Anda selamat di sini 💙',
   statTotal:'Laporan',statPending:'Menunggu',statReview:'Tindakan',statResolved:'Selesai',
   recent:'Terkini',noReports:'Tiada laporan',
   chatTitle:'Mr Safe · Pembantu Anti-Buli',chatSub:'Panduan anda',
@@ -1005,7 +1078,10 @@ ms:{
   breathInhale:'Tarik',breathHold:'Tahan',breathExhale:'Hembus',
   breathStart:'Mula',breathStop:'Henti',breathCycle:'Pusingan',
   meditTitle:'Pemasa Meditasi',meditDesc:'Pilih masa dan berehat.',
-  meditMin:'minit',meditStart:'Mula',meditStop:'Henti',
+  meditMin:'minit',meditStart:'Mula',meditStop:'Henti',meditCustom:'Tersuai',
+  meditCustomTitle:'Tempoh tersuai',
+  meditCustomPh:'Masukkan minit (1-120)',
+  meditCustomHint:'Antara 1 hingga 120 minit',
   meditDone:'Selesai. Syabas 💙',meditPlaying:'Bermain · bernafas perlahan',
   confirmTitle:'Sahkan',confirmSub:'Boleh ubah di profil.',
   confirmName:'Nama',confirmGender:'Jantina',confirmRace:'Bangsa',confirmOk:'Sahkan',confirmEdit:'Ubah',
@@ -1642,10 +1718,10 @@ async function notifySOSTeachers(className, reportCode){
     if(Array.isArray(tr.teacher_classes) && tr.teacher_classes.includes(className)) return true;
     return false;
   });
-  const {data:admins} = await sb.from('profiles').select('id').eq('role', 'admin');
-  const adminIds = (admins||[]).map(a => a.id);
-  const allIds = [...new Set([...targets.map(x=>x.id), ...adminIds])];
-  if(!allIds.length) return;
+  if(!targets.length){
+    console.warn('[SOS] No teacher for class:', className);
+    return;
+  }
   const {data:m, error} = await sb.from('messages').insert({
     sender_id: state.user.id,
     sender_name: '🚨 SOS',
@@ -1655,7 +1731,7 @@ async function notifySOSTeachers(className, reportCode){
   }).select().single();
   if(error){ console.warn('[SOS msg]', error); return; }
   if(!m) return;
-  await sb.from('message_receipts').insert(allIds.map(id => ({ message_id: m.id, user_id: id })));
+  await sb.from('message_receipts').insert(targets.map(tr => ({ message_id: m.id, user_id: tr.id })));
 }
 
 let sosPollTimer = null;
@@ -1774,56 +1850,95 @@ function stopSOSAlarm(){
   sosAlarmNodes = [];
 }
 
+/* =================== NEW HOME LAYOUT =================== */
 async function viewStudentHome(){
   const rs = await fetchMyReports();
   const p = rs.filter(r=>r.status==='pending').length;
   const rv = rs.filter(r=>r.status==='review').length;
   const ok = rs.filter(r=>r.status==='resolved').length;
+
+  const greeting = (() => {
+    const h = new Date().getHours();
+    if(state.lang==='zh') return h < 12 ? '早上好' : h < 18 ? '下午好' : '晚上好';
+    if(state.lang==='ms') return h < 12 ? 'Selamat pagi' : h < 18 ? 'Selamat petang' : 'Selamat malam';
+    return h < 12 ? 'Good morning' : h < 18 ? 'Good afternoon' : 'Good evening';
+  })();
+
+  const todayStr = new Date().toLocaleDateString(state.lang==='zh'?'zh-CN':state.lang==='ms'?'ms-MY':'en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+
   $('appmain').innerHTML = `
-    <div class="hero">
-      <h2>${t('hello')}, ${esc(state.user.name.split(' ')[0])} 👋</h2>
-      <p>${t('heroSub')}</p>
-      <div class="quick">
-        <button data-go="sos" class="q-sos"><span class="qc-ic">🚨</span>${t('quickSOS')}</button>
-        <button data-go="ai"><span class="qc-ic">🛡️</span>${t('quickChat')}</button>
-        <button data-go="report"><span class="qc-ic">📝</span>${t('quickReport')}</button>
-        <button data-go="test"><span class="qc-ic">🧠</span>${t('quickTest')}</button>
-        <button data-go="stress"><span class="qc-ic">🫧</span>${t('quickStress')}</button>
-        <button data-go="res"><span class="qc-ic">📚</span>${t('quickRes')}</button>
+    <div class="home-hero">
+      <div class="hh-greet">${greeting}, ${esc(state.user.name.split(' ')[0])} <span class="wave">👋</span></div>
+      <div class="hh-sub">${t('heroSub')}</div>
+      <div class="hh-date">${todayStr}</div>
+    </div>
+
+    <div class="home-section-title">${t('homeQuickActions')}</div>
+    <div class="home-actions">
+      <div class="home-action sos" data-go="sos">
+        <div class="ha-icon">🚨</div>
+        <div class="ha-text">
+          <div class="ha-title">${t('quickSOS')}</div>
+          <div class="ha-desc">${t('quickSOSDesc')}</div>
+        </div>
+      </div>
+      <div class="home-action" data-go="ai">
+        <div class="ha-icon">🛡️</div>
+        <div class="ha-text">
+          <div class="ha-title">${t('quickChat')}</div>
+          <div class="ha-desc">${t('quickChatDesc')}</div>
+        </div>
+      </div>
+      <div class="home-action" data-go="report">
+        <div class="ha-icon">📝</div>
+        <div class="ha-text">
+          <div class="ha-title">${t('quickReport')}</div>
+          <div class="ha-desc">${t('quickReportDesc')}</div>
+        </div>
+      </div>
+      <div class="home-action" data-go="test">
+        <div class="ha-icon">🧠</div>
+        <div class="ha-text">
+          <div class="ha-title">${t('quickTest')}</div>
+          <div class="ha-desc">${t('quickTestDesc')}</div>
+        </div>
+      </div>
+      <div class="home-action" data-go="stress">
+        <div class="ha-icon">🫧</div>
+        <div class="ha-text">
+          <div class="ha-title">${t('quickStress')}</div>
+          <div class="ha-desc">${t('quickStressDesc')}</div>
+        </div>
+      </div>
+      <div class="home-action" data-go="res">
+        <div class="ha-icon">📚</div>
+        <div class="ha-text">
+          <div class="ha-title">${t('quickRes')}</div>
+          <div class="ha-desc">${t('quickResDesc')}</div>
+        </div>
       </div>
     </div>
-    <div id="moodWrap">${await renderMoodCard()}</div>
-    <div class="stats">
-      <div class="stat blue"><div class="n">${rs.length}</div><div class="l">${t('statTotal')}</div></div>
-      <div class="stat yellow"><div class="n">${p}</div><div class="l">${t('statPending')}</div></div>
-      <div class="stat blue"><div class="n">${rv}</div><div class="l">${t('statReview')}</div></div>
-      <div class="stat green"><div class="n">${ok}</div><div class="l">${t('statResolved')}</div></div>
-    </div>
-    <h3 style="font-size:16px;margin:22px 0 12px">${t('recent')}</h3>
-    ${rs.length ? rs.slice(0,5).map(reportCard).join('') : emptyBox('📁', t('noReports'))}`;
-  $('appmain').querySelectorAll('[data-go]').forEach(b=>{ b.onclick=()=>{ stopAllSounds(); stopBreath(); stopMedit(); state.view=b.dataset.go; if(b.dataset.go==='stress') state.stressSub='menu'; renderApp(); }; });
-  bindReportCards();
-}
 
-async function renderMoodCard(){
-  const today = new Date().toISOString().slice(0,10);
-  const {data:existing} = await sb.from('daily_mood').select('*').eq('student_id', state.user.id).eq('date', today).maybeSingle();
-  if(existing){
-    const emojiMap = {1:'😢',2:'😔',3:'😐',4:'🙂',5:'😄'};
-    const labelMap = {1:'moodBad',2:'moodLow',3:'moodNeutral',4:'moodGood',5:'moodVeryGood'};
-    return `<div class="mood-card"><h3>💗 ${t('moodQ')}</h3><div class="mood-done"><div class="em">${emojiMap[existing.mood]||'🙂'}</div><div class="txt">${t('moodDone')} <b>${t(labelMap[existing.mood]||'moodGood')}</b></div></div></div>`;
-  }
-  const items = [
-    {v:1,em:'😢',k:'moodBad'},{v:2,em:'😔',k:'moodLow'},{v:3,em:'😐',k:'moodNeutral'},{v:4,em:'🙂',k:'moodGood'},{v:5,em:'😄',k:'moodVeryGood'}
-  ];
-  return `<div class="mood-card"><h3>💗 ${t('moodQ')}</h3><div class="mood-emojis">${items.map(i=>`<button class="mood-btn" onclick="submitMood(${i.v})"><span class="em">${i.em}</span>${t(i.k)}</button>`).join('')}</div></div>`;
-}
-async function submitMood(v){
-  const today = new Date().toISOString().slice(0,10);
-  const {error} = await sb.from('daily_mood').insert({student_id: state.user.id, student_name: state.user.name, class_name: state.user.className || '', mood: v, date: today});
-  if(error){ alert(error.message); return; }
-  const wrap = $('moodWrap');
-  if(wrap){ wrap.innerHTML = await renderMoodCard(); }
+    <div class="home-section-title">${t('homeStatus')}</div>
+    <div class="home-status">
+      <div class="hs-item blue"><div class="hs-icon">📋</div><div class="hs-body"><div class="hs-num">${rs.length}</div><div class="hs-lbl">${t('statTotal')}</div></div></div>
+      <div class="hs-item yellow"><div class="hs-icon">⏳</div><div class="hs-body"><div class="hs-num">${p}</div><div class="hs-lbl">${t('statPending')}</div></div></div>
+      <div class="hs-item blue"><div class="hs-icon">🔍</div><div class="hs-body"><div class="hs-num">${rv}</div><div class="hs-lbl">${t('statReview')}</div></div></div>
+      <div class="hs-item green"><div class="hs-icon">✅</div><div class="hs-body"><div class="hs-num">${ok}</div><div class="hs-lbl">${t('statResolved')}</div></div></div>
+    </div>
+
+    <div class="home-section-title">${t('homeRecentActivity')}</div>
+    ${rs.length ? rs.slice(0,3).map(reportCard).join('') : `<div class="home-empty"><span class="he-ic">🌿</span>${t('emptyRecent')}</div>`}`;
+
+  $('appmain').querySelectorAll('[data-go]').forEach(b=>{
+    b.onclick = ()=>{
+      stopAllSounds(); stopBreath(); stopMedit();
+      state.view = b.dataset.go;
+      if(b.dataset.go==='stress') state.stressSub='menu';
+      renderApp();
+    };
+  });
+  bindReportCards();
 }
 
 async function viewMine(){
@@ -2062,57 +2177,64 @@ function startCountdown(ms){
   lockTimer = setInterval(tick, 1000);
 }
 async function startTest(){
-  $('appmain').innerHTML = `<div class="card" style="text-align:center;padding:60px 24px"><div style="font-size:52px;margin-bottom:16px;animation:breathe 2s ease-in-out infinite">🧠</div><h3 style="margin:0 0 8px">${t('genTest')}</h3><div class="spinner-lg" style="margin-top:26px"></div></div>`;
+  $('appmain').innerHTML = `
+    <div class="card" style="text-align:center;padding:60px 24px">
+      <div style="font-size:72px;margin-bottom:18px;animation:breathe 1.5s ease-in-out infinite">🧠</div>
+      <h3 style="margin:0 0 10px;font-size:17px">${t('genTest')}</h3>
+      <p style="color:var(--muted);font-size:13px;margin:0 0 24px">${state.lang==='zh'?'AI 正在为你准备题目，请稍候…':state.lang==='ms'?'AI sedang sediakan soalan…':'AI is preparing your questions…'}</p>
+      <div class="spinner-lg"></div>
+      <div id="genTimer" style="margin-top:16px;font-size:12px;color:var(--dim)">0s</div>
+    </div>`;
+  let secs = 0;
+  const timerInt = setInterval(()=>{
+    secs++;
+    const el = $('genTimer');
+    if(el) el.textContent = secs + 's';
+  }, 1000);
   const questions = await generateTest();
+  clearInterval(timerInt);
   state.test = {questions, answers:[], index:0};
   renderTestQ();
 }
 async function generateTest(){
   try{
-    const resp = await fetch(SUPABASE_URL + '/functions/v1/' + FN_TEST, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ lang: state.lang }) });
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
+    const resp = await fetch(SUPABASE_URL + '/functions/v1/' + FN_TEST, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ lang: state.lang }),
+      signal: controller.signal,
+    });
+    clearTimeout(timeout);
     const rawText = await resp.text();
     let parsed = JSON.parse(rawText);
-    if(parsed.questions && parsed.questions.length >= 10){
-      const seenQ = new Set();
-      const cleaned = [];
+    if(parsed.questions && parsed.questions.length >= 15){
+      const seen = new Set();
+      const out = [];
       for(const q of parsed.questions){
-        const norm = String(q.q||'').trim().toLowerCase().replace(/\s+/g,'');
-        if(!norm || seenQ.has(norm)) continue;
-        seenQ.add(norm);
+        const k = String(q.q||'').trim().toLowerCase().replace(/\s+/g,'');
+        if(!k || seen.has(k)) continue;
+        seen.add(k);
         let opts = Array.isArray(q.opts) ? q.opts.filter(o => typeof o === 'string' && o.trim().length > 0).map(o => String(o).trim()) : [];
         while(opts.length < 4) opts.push('—');
         opts = opts.slice(0,4);
         const idx = state.lang==='zh'?0:state.lang==='ms'?2:1;
-        cleaned.push({ id:'q_'+cleaned.length, area:q.area||'mind', name: (AREA_NAME[q.area]||AREA_NAME.mind)[idx], q:q.q, opts });
-        if(cleaned.length >= 15) break;
+        out.push({ id:'q_'+out.length, area:q.area||'mind', name: (AREA_NAME[q.area]||AREA_NAME.mind)[idx], q:q.q, opts });
+        if(out.length >= 15) break;
       }
-      if(cleaned.length >= 10){
-        while(cleaned.length < 15){
-          const local = generateTestLocal();
-          const extra = local[cleaned.length % local.length];
-          const norm = String(extra.q||'').trim().toLowerCase().replace(/\s+/g,'');
-          if(!seenQ.has(norm)){ seenQ.add(norm); cleaned.push({...extra, id:'q_'+cleaned.length}); }
-          else break;
-        }
-        if(cleaned.length >= 10) return cleaned.slice(0,15);
-      }
+      if(out.length >= 15) return out;
     }
-    throw new Error('Bad format');
+    throw new Error('Bad');
   }catch(e){ return generateTestLocal(); }
 }
-const LOCAL_Q = {
-  mind:{zh:'最近两周，你多久觉得心里很累？',en:'How often have you felt mentally tired?',ms:'Berapa kerap anda rasa letih mental?'},
-  stress:{zh:'最近两周，你多久觉得压力很大？',en:'How often have you felt stressed?',ms:'Berapa kerap anda rasa tertekan?'},
-  emotion:{zh:'最近两周，你多久觉得心情低落？',en:'How often have you felt down?',ms:'Berapa kerap anda rasa sedih?'},
-  relationship:{zh:'最近两周，你多久觉得没人倾诉？',en:'How often did you feel no one to talk to?',ms:'Berapa kerap tiada siapa boleh didengari?'}
-};
 function generateTestLocal(){
   const lang = state.lang;
   const pools = {
-    mind: { zh:['过去两周，你能专注做一件事多久？','过去两周，你对以前喜欢的事情还有兴趣吗？','过去两周，早上起床时你感觉精神吗？','过去两周，你有动力去做该做的事吗？'], en:['In the past 2 weeks, how long can you focus on one thing?','In the past 2 weeks, do you still enjoy things you used to like?','In the past 2 weeks, how do you feel when you wake up?','In the past 2 weeks, do you feel motivated to do things?'], ms:['Dalam 2 minggu lepas, berapa lama anda boleh fokus pada satu perkara?','Dalam 2 minggu lepas, adakah anda masih minat perkara yang anda suka?','Dalam 2 minggu lepas, macam mana rasa anda apabila bangun pagi?','Dalam 2 minggu lepas, adakah anda rasa bermotivasi?'] },
-    stress: { zh:['过去两周，你因为功课或考试感到紧张吗？','过去两周，你觉得要做的事太多、时间不够吗？','过去两周，你因为达不到别人的期望而难受吗？','过去两周，你会因为小事就烦躁吗？'], en:['In the past 2 weeks, have you felt nervous about schoolwork or exams?','In the past 2 weeks, have you felt there is too much to do and not enough time?','In the past 2 weeks, have you felt bad about not meeting expectations?','In the past 2 weeks, do small things easily annoy you?'], ms:['Dalam 2 minggu lepas, adakah anda rasa cemas tentang pelajaran?','Dalam 2 minggu lepas, adakah anda rasa banyak sangat kerja?','Dalam 2 minggu lepas, adakah anda rasa teruk kerana tak capai harapan?','Dalam 2 minggu lepas, mudahkah anda rasa jengkel?'] },
-    emotion: { zh:['过去两周，你的心情起伏大吗？','过去两周，你有觉得什么都不想做的时候吗？','过去两周，你有没有莫名感到不安？','过去两周，你内心平静的时候多吗？'], en:['In the past 2 weeks, does your mood change a lot?','In the past 2 weeks, do you ever feel like doing nothing?','In the past 2 weeks, have you felt uneasy for no reason?','In the past 2 weeks, how often do you feel calm inside?'], ms:['Dalam 2 minggu lepas, adakah mood anda berubah-ubah?','Dalam 2 minggu lepas, pernahkah anda rasa tak nak buat apa-apa?','Dalam 2 minggu lepas, adakah anda rasa gelisah tanpa sebab?','Dalam 2 minggu lepas, berapa kerap anda rasa tenang?'] },
-    relationship: { zh:['过去两周，你能和家人好好聊心里话吗？','过去两周，你和同学相处得还好吗？','过去两周，你觉得有可以信任的人吗？'], en:['In the past 2 weeks, can you talk to your family about how you feel?','In the past 2 weeks, how are things with your classmates?','In the past 2 weeks, do you feel you have someone you can trust?'], ms:['Dalam 2 minggu lepas, bolehkah anda bercakap dengan keluarga?','Dalam 2 minggu lepas, macam mana hubungan anda dengan rakan sekelas?','Dalam 2 minggu lepas, adakah anda rasa ada orang boleh dipercayai?'] }
+    mind: { zh:['过去两周，你能专注做一件事多久？','过去两周，你对以前喜欢的事情还有兴趣吗？','过去两周，早上起床时你感觉精神吗？','过去两周，你有动力去做该做的事吗？'], en:['In the past 2 weeks, how long can you focus on one thing?','In the past 2 weeks, do you still enjoy things you used to like?','In the past 2 weeks, how do you feel when you wake up?','In the past 2 weeks, do you feel motivated to do things?'], ms:['Dalam 2 minggu lepas, berapa lama anda boleh fokus?','Dalam 2 minggu lepas, adakah anda masih minat perkara lama?','Dalam 2 minggu lepas, macam mana rasa bangun pagi?','Dalam 2 minggu lepas, adakah anda bermotivasi?'] },
+    stress: { zh:['过去两周，你因为功课或考试感到紧张吗？','过去两周，你觉得要做的事太多、时间不够吗？','过去两周，你因为达不到别人的期望而难受吗？','过去两周，你会因为小事就烦躁吗？'], en:['In the past 2 weeks, have you felt nervous about schoolwork or exams?','In the past 2 weeks, have you felt too much to do and not enough time?','In the past 2 weeks, have you felt bad about not meeting expectations?','In the past 2 weeks, do small things easily annoy you?'], ms:['Dalam 2 minggu lepas, adakah anda cemas tentang pelajaran?','Dalam 2 minggu lepas, rasa banyak sangat kerja, masa tak cukup?','Dalam 2 minggu lepas, rasa teruk kerana tak capai harapan?','Dalam 2 minggu lepas, mudah rasa jengkel?'] },
+    emotion: { zh:['过去两周，你的心情起伏大吗？','过去两周，你有觉得什么都不想做的时候吗？','过去两周，你有没有莫名感到不安？','过去两周，你内心平静的时候多吗？'], en:['In the past 2 weeks, does your mood change a lot?','In the past 2 weeks, do you ever feel like doing nothing?','In the past 2 weeks, have you felt uneasy for no reason?','In the past 2 weeks, how often do you feel calm inside?'], ms:['Dalam 2 minggu lepas, mood anda berubah-ubah?','Dalam 2 minggu lepas, pernah rasa tak nak buat apa-apa?','Dalam 2 minggu lepas, rasa gelisah tanpa sebab?','Dalam 2 minggu lepas, berapa kerap rasa tenang?'] },
+    relationship: { zh:['过去两周，你能和家人好好聊心里话吗？','过去两周，你和同学相处得还好吗？','过去两周，你觉得有可以信任的人吗？'], en:['In the past 2 weeks, can you talk to your family about how you feel?','In the past 2 weeks, how are things with your classmates?','In the past 2 weeks, do you feel you have someone you can trust?'], ms:['Dalam 2 minggu lepas, boleh bercakap dengan keluarga?','Dalam 2 minggu lepas, macam mana hubungan dengan rakan sekelas?','Dalam 2 minggu lepas, ada orang boleh dipercayai?'] }
   };
   const optsMap = {
     zh: { mind:['一直可以','大部分时候','偶尔分心','很难专注'], stress:['从没','偶尔','经常','每天'], emotion:['很稳定','大部分稳定','有时起伏','经常起伏'], relationship:['经常可以','有时可以','偶尔','不能'] },
@@ -2560,7 +2682,6 @@ async function rejectChange(reqId){
   renderApp();
 }
 
-/* ========== COMMUNITY (was Inbox) ========== */
 async function viewCommunity(){
   const msgs = await fetchMessages();
   const receipts = await fetchReceipts();
@@ -2571,7 +2692,6 @@ async function viewCommunity(){
   receipts.forEach(r => receiptMap[r.message_id] = r);
   const myClass = state.user.className || '';
 
-  // 只显示管理员发的（非 SOS）
   const isAdminMsg = (m) => m.target_type !== 'sos';
   const matchesMe = (m) => {
     if(m.target_type === 'all') return true;
@@ -2590,14 +2710,8 @@ async function viewCommunity(){
     const liked = rc && rc.liked_at;
     const likes = likeCount[m.id] || 0;
     return `<div class="community-card ${unread?'unread':''}" onclick="openCommunityPost('${m.id}')">
-      <div class="cc-head">
-        <div class="cc-icon">📢</div>
-        <div class="cc-title">${esc(m.title)}</div>
-      </div>
-      <div class="cc-meta">
-        <span>👤 ${esc(m.sender_name||'Admin')}</span>
-        <span>🕒 ${new Date(m.created_at).toLocaleString()}</span>
-      </div>
+      <div class="cc-head"><div class="cc-icon">📢</div><div class="cc-title">${esc(m.title)}</div></div>
+      <div class="cc-meta"><span>👤 ${esc(m.sender_name||'Admin')}</span><span>🕒 ${new Date(m.created_at).toLocaleString()}</span></div>
       <div class="cc-body">${esc((m.body||'').slice(0,200))}${(m.body||'').length>200?'…':''}</div>
       <div class="cc-footer">
         <button class="like-btn ${liked?'on':''}" onclick="event.stopPropagation();likeMessage('${m.id}')">❤️ ${likes}</button>
@@ -2908,25 +3022,62 @@ function breathNext(name){
     }
   }, 1000);
 }
+
+/* =================== MEDITATION with CUSTOM =================== */
 function renderMeditPage(){
   stopMedit();
+  const isCustom = ![5,10,15].includes(state._meditDuration);
   $('appmain').innerHTML = `
     <button class="stress-back" onclick="stopMedit();state.stressSub='menu';renderApp()">← ${t('stressBack')}</button>
     <h1 class="page-title">${t('meditTitle')}</h1><p class="page-sub">${t('meditDesc')}</p>
     <div class="medit-stage">
       <div class="medit-ring" id="meditRing">
         <svg width="260" height="260"><circle cx="130" cy="130" r="110" fill="none" stroke="rgba(148,163,184,.2)" stroke-width="10"/><circle cx="130" cy="130" r="110" fill="none" stroke="#0ea5e9" stroke-width="10" stroke-linecap="round" stroke-dasharray="${2*Math.PI*110}" stroke-dashoffset="0" id="meditProgress" style="transition:stroke-dashoffset 1s linear"/></svg>
-        <div class="val"><div><div class="num" id="meditTime">05:00</div><div class="lbl" id="meditStatus">${t('meditPlaying')}</div></div></div>
+        <div class="val"><div><div class="num" id="meditTime">${String(state._meditDuration).padStart(2,'0')}:00</div><div class="lbl" id="meditStatus">${t('meditPlaying')}</div></div></div>
       </div>
-      <div class="medit-pick" id="meditPick">${[5,10,15].map(m=>`<button data-m="${m}" class="${state._meditDuration===m?'on':''}">${m} ${t('meditMin')}</button>`).join('')}</div>
+      <div class="medit-pick" id="meditPick">
+        ${[5,10,15].map(m=>`<button data-m="${m}" class="${state._meditDuration===m?'on':''}">${m} ${t('meditMin')}</button>`).join('')}
+        <button class="custom ${isCustom?'on':''}" id="meditCustomBtn">✨ ${isCustom?state._meditDuration+' '+t('meditMin'):t('meditCustom')}</button>
+      </div>
       <div class="breath-ctrl"><button class="btn btn-primary" id="meditStartBtn">${t('meditStart')}</button><button class="btn btn-ghost" id="meditStopBtn" style="display:none">${t('meditStop')}</button></div>
     </div>`;
-  document.querySelectorAll('#meditPick button').forEach(b=>{
-    b.onclick = ()=>{ state._meditDuration = parseInt(b.dataset.m,10); document.querySelectorAll('#meditPick button').forEach(x=>x.classList.toggle('on', x===b)); const tm = $('meditTime'); if(tm) tm.textContent = String(state._meditDuration).padStart(2,'0')+':00'; };
+  document.querySelectorAll('#meditPick button[data-m]').forEach(b=>{
+    b.onclick = ()=>{
+      state._meditDuration = parseInt(b.dataset.m,10);
+      renderMeditPage();
+    };
   });
-  const tm0 = $('meditTime'); if(tm0) tm0.textContent = String(state._meditDuration).padStart(2,'0')+':00';
+  const custBtn = $('meditCustomBtn');
+  if(custBtn) custBtn.onclick = openMeditCustom;
   $('meditStartBtn').onclick = startMedit;
   $('meditStopBtn').onclick = ()=>{ stopMedit(); renderMeditPage(); };
+}
+function openMeditCustom(){
+  const current = ![5,10,15].includes(state._meditDuration) ? state._meditDuration : '';
+  openModal(`
+    <h2 style="margin:0 0 6px">${t('meditCustomTitle')}</h2>
+    <p style="color:var(--muted);font-size:13px;margin:0 0 16px">${t('meditCustomHint')}</p>
+    <div class="field">
+      <input id="meditCustomInput" type="number" min="1" max="120" placeholder="${t('meditCustomPh')}" value="${current}" inputmode="numeric">
+    </div>
+    <div style="display:flex;gap:10px;margin-top:16px">
+      <button class="btn btn-ghost" style="flex:1" onclick="closeModal()">${t('cancel')}</button>
+      <button class="btn btn-primary" style="flex:1" id="meditCustomOk">${t('confirmOk')}</button>
+    </div>`);
+  setTimeout(()=>{ const inp = $('meditCustomInput'); if(inp) inp.focus(); }, 100);
+  $('meditCustomOk').onclick = ()=>{
+    const inp = $('meditCustomInput');
+    const v = parseInt((inp.value||'').trim(), 10);
+    if(!v || v < 1 || v > 120){
+      alert(t('meditCustomHint'));
+      return;
+    }
+    state._meditDuration = v;
+    closeModal();
+    renderMeditPage();
+  };
+  const inp = $('meditCustomInput');
+  if(inp) inp.addEventListener('keydown', e=>{ if(e.key==='Enter') $('meditCustomOk').click(); });
 }
 function stopMedit(){ if(state._meditTimer){ clearInterval(state._meditTimer); state._meditTimer = null; } stopAllSounds(); }
 function startMedit(){
@@ -2963,7 +3114,7 @@ async function viewProfile(){
   const {data:prof} = await sb.from('profiles').select('*').eq('id', state.user.id).single();
   if(prof) state.user = {...state.user, ...prof, teacherClasses: prof.teacher_classes || []};
   const reqs = await fetchChangeRequests();
-  const pendingReqs = reqs.filter(r => r.status === 'pending');
+  const pendingReqs = reqs.filter(r => r.status === 'pending' && (r.field === 'name' || r.field === 'gender'));
   const hasNamePending = pendingReqs.some(r => r.field === 'name');
   const hasGenderPending = pendingReqs.some(r => r.field === 'gender');
   const isTeacher = state.user.role === 'teacher';
@@ -2988,7 +3139,7 @@ async function viewProfile(){
       <div class="set-row"><div><div class="set-label">${t('editBirthday')}</div><div class="set-desc">${state.user.birthday||'—'} · ${t('birthdayNote')}</div></div><button class="btn btn-ghost btn-sm" onclick="editBirthday()">${t('editBirthday')}</button></div>
       ${isTeacher ? `<div class="set-row"><div><div class="set-label">${t('yourClasses')}</div><div class="set-desc">${tClasses.length ? tClasses.map(esc).join(' · ') : '—'}</div></div><button class="btn btn-ghost btn-sm" onclick="editTeacherClasses()">${t('editClasses')}</button></div>` : ''}
     </div>
-    ${pendingReqs.length ? `<div class="card"><h3>${t('requestPending')}</h3>${pendingReqs.map(r=>`<div style="padding:8px 0;font-size:13px;border-bottom:1px solid var(--line)"><div style="font-weight:700">${r.field==='name'?t('confirmName'):r.field==='gender'?t('confirmGender'):r.field}</div><div style="color:var(--muted)">${esc(r.old_value||'—')} → ${esc(r.new_value)}</div></div>`).join('')}</div>` : ''}`;
+    ${pendingReqs.length ? `<div class="card"><h3>${t('requestPending')}</h3>${pendingReqs.map(r=>`<div style="padding:8px 0;font-size:13px;border-bottom:1px solid var(--line)"><div style="font-weight:700">${r.field==='name'?t('confirmName'):t('confirmGender')}</div><div style="color:var(--muted)">${esc(r.old_value||'—')} → ${esc(r.new_value)}</div></div>`).join('')}</div>` : ''}`;
   const inp = $('avatarInput');
   if(inp) inp.onchange = (e)=>{ const f = e.target.files[0]; if(!f) return; openAvatarCropper(f); };
 }
@@ -3211,27 +3362,48 @@ function playSplashSound(){
   }catch(e){}
 }
 
+/* =================== BOOT with session persistence =================== */
 async function boot(){
   state.verify = newVerify();
   applyTheme();
   updateSlogan();
   ensureAudioOnGesture();
+
   let p = 0;
   const bar = $('splashBar');
   const iv = setInterval(()=>{ p += 6 + Math.random()*8; if(p > 100) p = 100; if(bar) bar.style.width = p + '%'; if(p >= 100) clearInterval(iv); }, 120);
+
   const tryPlay = ()=>{ playSplashSound(); document.removeEventListener('click', tryPlay); document.removeEventListener('touchstart', tryPlay); };
   document.addEventListener('click', tryPlay);
   document.addEventListener('touchstart', tryPlay);
   setTimeout(()=>{ tryPlay(); }, 500);
+
   const splashDelay = new Promise(r=>setTimeout(r, 2400));
-  const sessionCheck = (async()=>{
-    try{
-      const {data:{session}} = await sb.auth.getSession();
-      if(!session) return null;
-      const {data:prof} = await sb.from('profiles').select('*').eq('id', session.user.id).single();
-      return prof;
-    }catch(e){ return null; }
+
+  // Session check with retry (Supabase may need a tick to restore session)
+  const sessionCheck = (async ()=>{
+    for(let attempt=0; attempt<3; attempt++){
+      try{
+        const { data:{ session }, error } = await sb.auth.getSession();
+        if(error){ console.warn('[boot] session err', error); }
+        if(session && session.user){
+          // Fetch profile via maybeSingle to avoid 406 errors
+          const { data:prof } = await sb.from('profiles').select('*').eq('id', session.user.id).maybeSingle();
+          if(prof) return prof;
+          // Profile missing — but session exists. Try to create a minimal profile.
+          const email = session.user.email || '';
+          const fallbackName = (email.split('@')[0]||'USER').toUpperCase();
+          const { data:created } = await sb.from('profiles').upsert({
+            id: session.user.id, email, name: fallbackName, role:'student', class_name:''
+          }, { onConflict:'id' }).select().single();
+          if(created) return created;
+        }
+      }catch(e){ console.warn('[boot] sessionCheck err', e); }
+      await new Promise(r=>setTimeout(r, 400));
+    }
+    return null;
   })();
+
   const [, prof] = await Promise.all([splashDelay, sessionCheck]);
   if(prof){
     const {data:app} = await sb.from('teacher_applications').select('*').eq('user_id', prof.id).order('created_at',{ascending:false}).limit(1).maybeSingle();
