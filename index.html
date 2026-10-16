@@ -955,8 +955,20 @@ async function doLogin(){
   await new Promise(r=>setTimeout(r, 600));
   let {data:prof} = await sb.from('profiles').select('*').eq('id', data.user.id).maybeSingle();
   if(!prof){
-    const {data:created} = await sb.from('profiles').insert({id:data.user.id, email:email, name:email.split('@')[0].toUpperCase(), role:'student', class_name:''}).select().single();
-    if(created) prof = created;
+    const {data:created, error:insErr} = await sb.from('profiles').upsert({
+      id: data.user.id,
+      email: email,
+      name: email.split('@')[0].toUpperCase(),
+      role: 'student',
+      class_name: '',
+      gender: 'other',
+      race: 'others'
+    }, {onConflict: 'id'}).select().single();
+    if(insErr){
+      console.error('profile upsert failed:', insErr);
+      return show('Profile create failed: ' + insErr.message);
+    }
+    prof = created;
   }
   if(!prof) return show('Profile not found.');
   const {data:app} = await sb.from('teacher_applications').select('*').eq('user_id', prof.id).order('created_at',{ascending:false}).limit(1).maybeSingle();
