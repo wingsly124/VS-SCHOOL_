@@ -28,7 +28,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 input,select,textarea{font-family:inherit;font-size:15px}
 .screen{display:none;min-height:100vh}.screen.active{display:block}
 
-/* Splash */
 #scr-splash{display:none;place-items:center;min-height:100vh;text-align:center;overflow:hidden}
 #scr-splash.active{display:grid}
 .splash-orbs{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
@@ -58,7 +57,6 @@ body.light .splash-slogan{color:#0284c7}
 .splash-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#0ea5e9,#10b981,#06b6d4);border-radius:99px;transition:width .3s}
 .splash-studio{font-size:11px;color:var(--dim);letter-spacing:3px;margin-top:18px}
 
-/* Auth */
 .auth-lang{position:fixed;top:14px;right:14px;z-index:50;display:flex;gap:5px;background:var(--panel);padding:4px;border-radius:11px;border:1px solid var(--line);backdrop-filter:blur(12px)}
 .auth-lang button{padding:7px 12px;border-radius:8px;font-size:12px;font-weight:700;color:var(--muted);white-space:nowrap}
 .auth-lang button.on{background:linear-gradient(135deg,rgba(14,165,233,.55),rgba(16,185,129,.3));color:#fff}
@@ -74,9 +72,9 @@ body.light .auth-brand .b-cn{color:#0284c7}
 .auth-brand li::before{content:'◆';color:var(--primary2);font-size:9px;margin-top:8px}
 .auth-form{flex:1;padding:60px 48px;display:flex;flex-direction:column;justify-content:center;max-width:520px;margin:0 auto;width:100%}
 .auth-card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:28px;backdrop-filter:blur(20px);box-shadow:0 20px 60px rgba(14,165,233,.15)}
-.auth-tabs{display:flex;gap:6px;background:rgba(11,18,32,.5);padding:5px;border-radius:12px;margin-bottom:22px}
+.auth-tabs{display:flex;gap:6px;background:rgba(11,18,32,.5);padding:5px;border-radius:12px;margin-bottom:22px;flex-wrap:wrap}
 body.light .auth-tabs{background:rgba(14,165,233,.08)}
-.auth-tabs button{flex:1;padding:10px;border-radius:9px;font-size:14px;font-weight:700;color:var(--muted);transition:.15s}
+.auth-tabs button{flex:1;padding:10px;border-radius:9px;font-size:14px;font-weight:700;color:var(--muted);min-width:80px}
 .auth-tabs button.on{background:linear-gradient(135deg,#0ea5e9,#10b981);color:#fff;box-shadow:0 6px 20px rgba(14,165,233,.4)}
 .field{margin-bottom:14px;position:relative}
 .field label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:6px}
@@ -114,7 +112,6 @@ body.light .role-pick button{background:#fff}
 .role-pick button.on{border-color:var(--primary);background:rgba(14,165,233,.16);color:var(--text)}
 @media(max-width:800px){.auth-brand{display:none}.auth-form{padding:80px 20px 40px;max-width:100%}}
 
-/* App */
 .appbar{position:sticky;top:0;z-index:40;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:var(--panel);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
 .appbar-left{display:flex;align-items:center;gap:11px}
 .appbar-left .vs-mini{width:34px;height:34px}
@@ -262,7 +259,6 @@ body.light .participant-row input{background:#fff}
 .view-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:99px;background:linear-gradient(135deg,#0ea5e9,#10b981);color:#fff;font-size:12.5px;font-weight:700;cursor:pointer;border:none}
 .view-btn:hover{filter:brightness(1.1)}
 
-/* Stress Menu */
 .stress-menu{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
 @media(max-width:560px){.stress-menu{grid-template-columns:1fr}}
 .stress-card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:32px 24px;text-align:center;cursor:pointer;transition:.2s;position:relative;overflow:hidden}
@@ -271,7 +267,6 @@ body.light .participant-row input{background:#fff}
 .stress-card h3{margin:0 0 8px;font-size:18px;font-weight:800}
 .stress-card p{margin:0;font-size:13px;color:var(--muted);line-height:1.6}
 
-/* Sound */
 .sound-stage{padding:32px 20px;text-align:center}
 .sound-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:20px}
 .sound-btn{padding:26px 16px;border-radius:18px;background:var(--panel);border:1px solid var(--line);text-align:center;font-size:14px;font-weight:700;cursor:pointer;transition:.15s}
@@ -279,7 +274,6 @@ body.light .participant-row input{background:#fff}
 .sound-btn.active{background:linear-gradient(135deg,rgba(14,165,233,.35),rgba(16,185,129,.25));border-color:var(--primary)}
 .sound-btn .ic{font-size:36px;display:block;margin-bottom:8px}
 
-/* Bubble */
 .bubble-stage{position:relative;width:100%;height:calc(100vh - 280px);min-height:420px;background:linear-gradient(160deg,rgba(14,165,233,.15),rgba(16,185,129,.08),rgba(6,182,212,.08));border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:16px}
 .bubble{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.85),rgba(14,165,233,.45) 60%,rgba(16,185,129,.25));border:1px solid rgba(255,255,255,.4);cursor:pointer;box-shadow:0 8px 24px rgba(14,165,233,.35),inset 0 0 30px rgba(255,255,255,.25);animation:floatUp linear}
 @keyframes floatUp{from{transform:translateY(100%) scale(.6);opacity:0}10%{opacity:1;transform:translateY(80%) scale(1)}to{transform:translateY(-120%) scale(1)}}
@@ -289,14 +283,12 @@ body.light .participant-row input{background:#fff}
 .stress-back{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:11px;background:var(--panel);border:1px solid var(--line);font-size:13.5px;font-weight:700;margin-bottom:12px;cursor:pointer}
 .stress-back:hover{border-color:var(--primary)}
 
-/* Profile */
 .profile-head{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
 .profile-avatar{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,#0ea5e9,#10b981);display:grid;place-items:center;color:#fff;font-size:38px;font-weight:800;overflow:hidden;position:relative;flex-shrink:0;border:3px solid var(--line)}
 .profile-avatar img{width:100%;height:100%;object-fit:cover}
 .profile-avatar label{position:absolute;inset:auto 0 0 0;background:rgba(0,0,0,.65);color:#fff;text-align:center;font-size:10px;padding:4px;cursor:pointer;font-weight:700}
 .profile-avatar input{display:none}
 
-/* Settings */
 .set-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);gap:14px;flex-wrap:wrap}
 .set-row:last-child{border-bottom:none}
 .set-label{font-size:14px;font-weight:700}
@@ -312,7 +304,6 @@ body.light .participant-row input{background:#fff}
 </head>
 <body>
 
-<!-- Splash -->
 <div class="screen active" id="scr-splash">
   <div class="splash-orbs"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
   <div class="splash-inner">
@@ -339,7 +330,6 @@ body.light .participant-row input{background:#fff}
   </div>
 </div>
 
-<!-- Auth -->
 <div class="screen" id="scr-auth">
   <div class="auth-lang" id="authLang"></div>
   <div class="auth-wrap">
@@ -370,7 +360,6 @@ body.light .participant-row input{background:#fff}
   </div>
 </div>
 
-<!-- Lang picker -->
 <div class="screen" id="scr-lang">
   <div class="lang-pick-wrap">
     <div class="lang-pick-box">
@@ -387,7 +376,6 @@ body.light .participant-row input{background:#fff}
   </div>
 </div>
 
-<!-- App -->
 <div class="screen" id="scr-app">
   <header class="appbar">
     <div class="appbar-left">
@@ -430,7 +418,6 @@ const FN_TEST = 'ai-test';
 const FN_ANALYZE = 'ai-analyze';
 const FN_BUBBLE = 'ai-bubble';
 
-/* ================= i18n ================= */
 const I18N = {
 en:{
   login:'Login',register:'Register',signIn:'Sign in',createAccount:'Create account',
@@ -520,7 +507,7 @@ en:{
   trashTitle:'Recycle Bin',confirmDeleteTitle:'Delete?',confirmDelete:'Delete',cancel:'Cancel',
   recipients:'recipients',errTeacherEmailUsed:'This Gmail already has an application.',
   unread:'● Unread',read:'✓ Read',
-  filterTitle:'Filter',filterNewest:'Newest',filterOldest:'Oldest',
+  filterTitle:'Filter',filterNewest:'Newest First',filterOldest:'Oldest First',
   filterHighLevel:'High level first',filterLowLevel:'Low level first',
   filterHealthiest:'Most Healthy First',filterSickest:'Most Unhealthy First',
   profileTitle:'My Profile',profileSub:'Your info',
@@ -579,8 +566,8 @@ zh:{
   brand3:'老师实时处理每个案件',
   brand4:'每 12 小时可进行一次心理检测',
   navHome:'首页',navAI:'Mr Safe',navReport:'举报',navMine:'我的举报',
-  navTest:'心理检测',navRes:'求助',navDash:'数据分析',navStudents:'用户',
-  navReports:'举报管理',navAssess:'心理报告',navRatings:'评分',
+  navTest:'心理检测',navRes:'求助',navDash:'数据分析',navStudents:'用户管理',
+  navReports:'举报管理',navAssess:'心理报告',navRatings:'每日评分',
   navTeachers:'审核中心',navInbox:'收件箱',navSend:'发送',
   navStress:'压力释放',navProfile:'我的主页',navSettings:'设置',
   hello:'你好',heroSub:'这里是你安全的空间。',
@@ -799,6 +786,7 @@ let state = {
   unreadCount:0, inboxTab:'inbox', filter:'newest', usedBubbles:[], adminTab:'teachers',
   stressSub:'menu', activeSound:null
 };
+
 function t(k, vars){
   let s = (I18N[state.lang] && I18N[state.lang][k]) || I18N.en[k] || k;
   if(vars) for(const kk in vars) s = s.replace('{'+kk+'}', vars[kk]);
@@ -1556,7 +1544,7 @@ function showResult(res){
     return `<div class="dim-row"><div class="dim-name">${AREA_ICON[d.dim]} ${esc(d.name)}<div class="lbl" style="color:${col}">${t(lvlKey)}</div>${detail?.text?`<div style="font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.5">${esc(detail.text)}</div>`:''}</div></div>`;
   }).join('');
 
-  const overallText = a.overall ? `<div class="card"><div style="font-size:14px;color:var(--muted);line-height:1.7">${esc(a.overall)}</div></div>` : '';
+  const overall = a.overall ? `<div class="card" style="background:rgba(14,165,233,.08);border-color:rgba(14,165,233,.3)"><h3>${t('resultTitle')}</h3><div style="font-size:14px;color:var(--muted);line-height:1.8">${esc(a.overall)}</div></div>` : '';
   const adviceHTML = (a.advice && a.advice.length) ? `<div class="card"><h3>${t('advice')}</h3><div style="font-size:14px;color:var(--muted);line-height:1.9">${a.advice.map(x=>'• '+esc(x)).join('<br>')}</div></div>` : '';
   const encourage = a.encouragement ? `<div class="card" style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(14,165,233,.08));border-color:rgba(16,185,129,.35);font-size:14px">💙 ${esc(a.encouragement)}</div>` : '';
   const urgentNeeded = res.level==='unhealthy';
@@ -1568,7 +1556,7 @@ function showResult(res){
       <div style="font-size:34px;font-weight:800">${esc(res.label)}</div>
       <div style="font-size:13px;color:var(--muted);margin-top:10px;line-height:1.7">${t('notDiag')}</div>
     </div>
-    ${overallText}
+    ${overall}
     <div class="card"><h3>${t('dimBreak')}</h3>${dimRows}</div>
     ${urgentHTML}
     ${adviceHTML}
@@ -1694,7 +1682,7 @@ async function viewAssess(){
 
   $('appmain').innerHTML = `
     <h1 class="page-title">${t('assessTitle')}</h1><p class="page-sub">${t('assessSub')}</p>
-    <div class="auth-tabs" style="margin-bottom:14px;max-width:560px;flex-wrap:wrap">
+    <div class="auth-tabs" style="margin-bottom:14px;max-width:520px;flex-wrap:wrap">
       ${filterOpts.map(([k,l])=>`<button class="${f===k?'on':''}" onclick="state.filter='${k}';renderApp()">${l}</button>`).join('')}
     </div>
     ${sorted.length ? `<div class="table-wrap"><table><thead><tr><th>${t('colName')}</th><th>${t('colClass')}</th><th>${t('colScore')}</th><th>${t('colDate')}</th></tr></thead><tbody>${sorted.map(a=>{ const lvl = a.level||'normal'; return `<tr><td style="font-weight:700;color:var(--text)">${esc(a.student_name)}</td><td>${esc(a.class_name||'—')}</td><td><span class="badge ${lvl}">${lvl==='healthy'?t('levelHealthy'):lvl==='unhealthy'?t('levelUnhealthy'):t('levelNormal')}</span></td><td style="color:var(--dim);font-size:12px">${new Date(a.created_at).toLocaleString()}</td></tr>`; }).join('')}</tbody></table></div>` : emptyBox('🧠', t('noAssess'))}`;
@@ -1745,10 +1733,10 @@ async function viewTeachers(){
       ${apps.length ? apps.map(a=>`<div class="list-item" style="cursor:default">
         <div class="li-head">
           <div><div style="font-weight:800;font-size:15px">${esc(a.name)}</div><div style="font-size:12px;color:var(--muted)">${esc(a.email)}</div></div>
-          <span class="badge ${a.status==='approved'?'approved':a.status==='rejected'?'rejected':a.status==='blocked'?'blocked':'pending'}">${a.status}</span>
-        </div>
-        <div class="li-meta"><span>🕒 ${new Date(a.created_at).toLocaleString()}</span></div>
-        ${a.status==='pending' ? `<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+          <span class="badge ${a.status==='approved'?'approved':a.status==='rejected'?'rejected':a.status==='blocked'?'blocked':' `<pending'}">${a.status}</span>
+        </divdiv>
+        <div class="li-m styleeta"><span>🕒 ${new Date(a.created_at).="toLocaleString()}</span></div>
+        ${displaya.status==='pending' ?:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
           <button class="btn btn-primary btn-sm" onclick="approveTeacher('${a.id}','${a.user_id}')">${t('approve')}</button>
           <button class="btn btn-danger btn-sm" onclick="rejectTeacher('${a.id}')">${t('reject')}</button>
           <button class="btn btn-ghost btn-sm" onclick="blockTeacher('${a.id}')">${t('block')}</button>
@@ -1770,7 +1758,7 @@ async function viewTeachers(){
             <div style="font-weight:800;font-size:15px">${esc(r.user_name||'')} · ${r.field==='name'?t('reqName'):t('reqGender')}</div>
             <div style="font-size:12.5px;color:var(--muted);margin-top:4px">
               <span style="color:var(--dim)">${esc(r.old_value||'—')}</span>
-              <span style="color:var(--accent);margin:0 8px">→</span>
+              <span style="color:var(--accent2);margin:0 8px">→</span>
               <span style="color:var(--text);font-weight:700">${esc(r.new_value)}</span>
             </div>
             ${r.reason?`<div style="font-size:12px;color:var(--dim);margin-top:4px">📝 ${esc(r.reason)}</div>`:''}
