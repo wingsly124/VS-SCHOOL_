@@ -294,7 +294,7 @@ td{padding:11px 12px;border-bottom:1px solid var(--line);color:var(--muted)}
 tr:last-child td{border-bottom:none}
 .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
 .chat-wrap{display:flex;flex-direction:column;height:calc(100vh - 190px);min-height:400px;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.chat-head{padding:14px 18px;border-bottom:1px solid var(--line);background:rgba(11,18,32,.4);display:flex;justify-content:space-between;align-items:center}
+.chat-head{padding:14px 18px;border-bottom:1px solid var(--line);background:rgba(15,23,42,.6);display:flex;justify-content:space-between;align-items:center}
 body.light .chat-head{background:#f0f9ff}
 .chat-head h3{margin:0;font-size:15px;font-weight:800}
 .chat-head p{margin:3px 0 0;font-size:12px;color:var(--muted)}
@@ -961,6 +961,25 @@ body.light .opt.on{border-color:var(--primary)!important;background:rgba(109,40,
 }
 /* Ensure logo color follows theme */
 body.light .vs-mark{background:var(--logo);}
+
+
+/* Responsive & accessibility refinements */
+@media (max-width: 640px){
+  .home-hero{padding:22px 18px;}
+  .home-hero .hh-greet{font-size:20px;}
+  .home-actions{grid-template-columns:1fr 1fr;}
+  .auth-form{padding:70px 16px 30px;}
+  .page-title{font-size:24px;}
+}
+@media (max-width: 480px){
+  .home-actions{grid-template-columns:1fr;}
+  .splash-title{font-size:36px;}
+}
+/* Focus states for keyboard */
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+  outline:2px solid var(--primary);
+  outline-offset:2px;
+}
 
 </style>
 </head>
