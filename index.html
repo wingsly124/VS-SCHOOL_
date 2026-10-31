@@ -6,66 +6,52 @@
 <title>Vs School · SMK MERBAU</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-:root{
-  --bg:#100e17;
-  --bg2:#161221;
-  --panel:#1c1730;
-  --panel2:#241e3a;
-  --line:rgba(196,181,253,.12);
-  --text:#f5f3ff;
-  --muted:#a89bbf;
-  --dim:#6b6185;
-  --primary:#a78bfa;
-  --primary2:#f472b6;
-  --accent:#fbbf24;
+ :root{
+  --bg:#0b1220;
+  --bg2:#0f172a;
+  --panel:#1e293b;
+  --panel2:#334155;
+  --line:rgba(56,189,248,.18);
+  --text:#f1f5f9;
+  --muted:#94a3b8;
+  --dim:#64748b;
+  --primary:#38bdf8;
+  --primary2:#0ea5e9;
+  --accent:#22d3ee;
   --ok:#34d399;
   --warn:#fbbf24;
   --danger:#fb7185;
-  --info:#818cf8;
-  --logo:#c4b5fd;
+  --info:#38bdf8;
+  --logo:#38bdf8;
   --r:18px;
   --font:'Segoe UI',system-ui,-apple-system,sans-serif;
   --shadow:0 16px 48px rgba(0,0,0,.45);
-  --grad:linear-gradient(135deg,#a78bfa 0%,#f472b6 55%,#fbbf24 100%);
-  --grad-soft:linear-gradient(160deg,rgba(167,139,250,.18),rgba(244,114,182,.08));
+  --grad:linear-gradient(135deg,#38bdf8 0%,#0ea5e9 100%);
+  --grad-soft:linear-gradient(160deg,rgba(56,189,248,.18),rgba(14,165,233,.08));
 }
 body.light{
-  --bg:#f7f4ff;
-  --bg2:#efeafc;
+  --bg:#f8fafc;
+  --bg2:#f1f5f9;
   --panel:#ffffff;
-  --panel2:#f3efff;
-  --line:rgba(109,40,217,.12);
-  --text:#1e1b2e;
-  --muted:#6b6280;
-  --dim:#9a92b0;
-  --primary:#7c3aed;
-  --primary2:#db2777;
-  --accent:#d97706;
-  --logo:#6d28d9;
-  --shadow:0 12px 36px rgba(109,40,217,.12);
-  --grad:linear-gradient(135deg,#7c3aed,#db2777);
-  --grad-soft:linear-gradient(160deg,rgba(124,58,237,.1),rgba(219,39,119,.06));
-}
-
-body.light{
-  --bg:#f5f6fb;
-  --bg2:#eef0f8;
-  --panel:#ffffff;
-  --panel2:#f3f4fb;
-  --line:rgba(15,23,42,.12);
+  --panel2:#f8fafc;
+  --line:rgba(2,132,199,.15);
   --text:#0f172a;
   --muted:#475569;
   --dim:#64748b;
-  --primary:#6d28d9;
-  --primary2:#be185d;
-  --accent:#b45309;
+  --primary:#0284c7;
+  --primary2:#0369a1;
+  --accent:#0891b2;
   --ok:#047857;
   --warn:#b45309;
   --danger:#b91c1c;
-  --info:#3730a3;
-  --logo:#6d28d9;
+  --info:#0284c7;
+  --logo:#0284c7;
   --shadow:0 12px 36px rgba(15,23,42,.08);
+  --grad:linear-gradient(135deg,#0284c7,#0369a1);
+  --grad-soft:linear-gradient(160deg,rgba(2,132,199,.1),rgba(3,105,161,.06));
 }
+
+
 body.light .appmain,
 body.light .card,
 body.light .list-item,
@@ -99,12 +85,9 @@ body.light .chat-bubble.ai{color:#0f172a}
 body.light .chat-bubble.me{color:#fff}
 
 
-body.light{
-  --bg:#f0f9ff;--panel:rgba(255,255,255,.92);--panel2:#ffffff;
-  --line:rgba(14,165,233,.2);--text:#0c4a6e;--muted:#64748b;--dim:#94a3b8;
-}
+
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px;min-height:100vh;transition:background .3s,color .3s}
-body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;transition:opacity .3s;background:radial-gradient(900px 700px at 15% -10%,rgba(14,165,233,.22),transparent 60%),radial-gradient(700px 500px at 100% 10%,rgba(16,185,129,.15),transparent 55%),radial-gradient(600px 500px at 50% 100%,rgba(6,182,212,.12),transparent 60%),linear-gradient(160deg,#0b1220,#0f172a 55%,#0b1220)}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;transition:opacity .3s;background:radial-gradient(900px 700px at 15% -10%,rgba(56,189,248,.18),transparent 60%),radial-gradient(700px 500px at 100% 10%,rgba(14,165,233,.12),transparent 55%),radial-gradient(600px 500px at 50% 100%,rgba(34,211,238,.08),transparent 60%),linear-gradient(160deg,#0b1220,#0f172a 55%,#0b1220)}
 body.light::before{opacity:.4}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 input,select,textarea{font-family:inherit;font-size:15px}
@@ -159,7 +142,7 @@ body.light .splash-slogan{color:#0369a1}
 .auth-wrap{display:flex;min-height:100vh;max-width:1200px;margin:0 auto}
 .auth-brand{flex:1;padding:60px 48px;display:flex;flex-direction:column;justify-content:center}
 .auth-brand .b-logo{width:100px;height:100px}
-.auth-brand h1{font-size:42px;font-weight:800;letter-spacing:-1.5px;margin:14px 0 0;background:linear-gradient(120deg,#fff,#7dd3fc 40%,#10b981 70%,#06b6d4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.auth-brand h1{font-size:42px;font-weight:800;letter-spacing:-1.5px;margin:14px 0 0;color:var(--text);}
 .auth-brand .b-sub{font-size:11px;letter-spacing:5px;color:#38bdf8;font-weight:700;margin-top:4px}
 .auth-brand .b-cn{font-size:17px;color:#7dd3fc;margin-top:10px;font-weight:600}
 body.light .auth-brand .b-cn{color:#0284c7}
@@ -733,28 +716,7 @@ body.light .diary-hero{background:linear-gradient(135deg,#ede9fe,#fce7f3)}
 #themeSwitchOv{position:fixed;inset:0;z-index:99999;background:rgba(15,23,42,.55);display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
 #themeSwitchOv.on{display:flex}
 .theme-switch-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 36px;text-align:center;color:var(--text);box-shadow:var(--shadow);min-width:220px}
-body.light{
-  --bg:#f1f5f9 !important;
-  --bg2:#e2e8f0 !important;
-  --panel:#ffffff !important;
-  --panel2:#f8fafc !important;
-  --line:rgba(15,23,42,.14) !important;
-  --text:#0f172a !important;
-  --muted:#334155 !important;
-  --dim:#475569 !important;
-  --primary:#6d28d9 !important;
-  --primary2:#be185d !important;
-  --accent:#b45309 !important;
-  --ok:#047857 !important;
-  --warn:#b45309 !important;
-  --danger:#b91c1c !important;
-  --info:#1d4ed8 !important;
-  --logo:#6d28d9 !important;
-  --shadow:0 10px 28px rgba(15,23,42,.1) !important;
-  --grad:linear-gradient(135deg,#7c3aed 0%,#db2777 55%,#d97706 100%) !important;
-  color:#0f172a !important;
-  background:#f1f5f9 !important;
-}
+
 body.light .app-shell,
 body.light .appmain,
 body.light .appbar,
@@ -1323,7 +1285,7 @@ en:{
   colName:'Name',colEmail:'Gmail',colClass:'Class',colDate:'Date',
   colScore:'Level',colStatus:'Status',colAction:'Action',
   updateStatus:'Update',save:'Save',noStudents:'No users',noAssess:'No reports',
-  aiOnly:'I only help with school safety.',genTest:'Preparing questions…',
+  aiOnly:'I only help with school safety.',genTest:'Loading approved questions…',
   ratingsTitle:'Daily Ratings',ratingsSub:'Rate your class',
   rateAtmosphere:'Atmosphere',rateAttitude:'Attitude',rateNote:'Note',
   rateSave:'Save',rateHistory:'History',
@@ -1619,7 +1581,7 @@ zh:{
   colName:'姓名',colEmail:'Gmail',colClass:'班级',colDate:'日期',
   colScore:'等级',colStatus:'状态',colAction:'操作',
   updateStatus:'更新',save:'保存',noStudents:'暂无用户',noAssess:'暂无报告',
-  aiOnly:'我只能协助校园安全。',genTest:'正在准备题目…',
+  aiOnly:'我只能协助校园安全。',genTest:'正在加载已批准的题目…',
   ratingsTitle:'每日评分',ratingsSub:'给班级打分',
   rateAtmosphere:'氛围',rateAttitude:'态度',rateNote:'备注',
   rateSave:'保存',rateHistory:'历史',
@@ -1907,7 +1869,7 @@ ms:{
   colName:'Nama',colEmail:'Gmail',colClass:'Kelas',colDate:'Tarikh',
   colScore:'Tahap',colStatus:'Status',colAction:'Tindakan',
   updateStatus:'Kemas kini',save:'Simpan',noStudents:'Tiada',noAssess:'Tiada',
-  aiOnly:'Saya hanya bantu keselamatan sekolah.',genTest:'Sedang sediakan soalan…',
+  aiOnly:'Saya hanya bantu keselamatan sekolah.',genTest:'Memuatkan soalan yang diluluskan…',
   ratingsTitle:'Penilaian',ratingsSub:'Nilai kelas',
   rateAtmosphere:'Suasana',rateAttitude:'Sikap',rateNote:'Nota',
   rateSave:'Simpan',rateHistory:'Sejarah',
@@ -5675,7 +5637,7 @@ async function startTest(){
     <div class="card" style="text-align:center;padding:56px 24px">
       <div style="font-size:64px;margin-bottom:16px;animation:breathe 1.5s ease-in-out infinite">🧠</div>
       <h3 style="margin:0 0 8px;font-size:17px">${t('genTest')}</h3>
-      <p style="color:var(--muted);font-size:13.5px;margin:0 0 20px;line-height:1.6">${state.lang==='zh'?'正在准备题目…':state.lang==='ms'?'Sedang sediakan soalan…':'Preparing questions…'}</p>
+      <p style="color:var(--muted);font-size:13.5px;margin:0 0 20px;line-height:1.6">${state.lang==='zh'?'正在加载已批准的题目…':state.lang==='ms'?'Memuatkan soalan yang diluluskan…':'Loading approved questions…'}</p>
       <div class="spinner-lg"></div>
       <div id="genTimer" style="margin-top:14px;font-size:12px;color:var(--dim)">0s</div>
     </div>`;
@@ -5855,18 +5817,37 @@ async function fetchAiTestQuestions(){
 }
 
 async function generateTest(){
-  // One path: ai-test only. No multi-minute retry storm.
+  // STRICT: approved questions from test_questions table only. No AI generation.
   try{
-    const qs = await fetchAiTestQuestions();
-    if(qs && qs.length >= 10){
-      saveTestCache(qs);
-      return qs.slice(0, 15);
+    const lang = state.lang || 'en';
+    const { data, error } = await sb.from('test_questions')
+      .select('id, area, question, options, lang')
+      .eq('lang', lang)
+      .limit(50);
+    if(error) throw error;
+    const rows = data || [];
+    if(rows.length < 15){
+      const msg = state.lang==='zh'
+        ? '已批准的题目不足（需要 15 题）。请联系管理员添加更多已审核题目。'
+        : state.lang==='ms'
+        ? 'Soalan diluluskan tidak mencukupi (perlu 15). Sila hubungi pentadbir.'
+        : 'Insufficient approved questions (15 required). Please contact the administrator to add more approved questions.';
+      throw new Error(msg);
     }
-    throw new Error(state.lang==='zh'?'题目不足':'Not enough questions');
+    // Map to expected question format used by renderTestQ
+    const questions = rows.slice(0, 15).map((r, i) => ({
+      id: r.id || ('q_' + i),
+      area: r.area || 'general',
+      name: r.area || 'General',
+      q: r.question || r.q || '',
+      opts: Array.isArray(r.options) ? r.options : (typeof r.options === 'string' ? JSON.parse(r.options || '[]') : [])
+    }));
+    saveTestCache(questions);
+    return questions;
   }catch(e){
-    console.error('[generateTest]', e);
-    const msg = String((e && (e.message || e.detail)) || e || 'ai-test');
-    throw new Error((state.lang==='zh'?'AI 出题失败：':'AI failed: ') + msg.slice(0, 180));
+    console.error('[generateTest approved]', e);
+    const msg = String((e && e.message) || e || 'Failed to load approved questions');
+    throw new Error(msg);
   }
 }
 
